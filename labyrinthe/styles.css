@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: #4ba5c9;
+    color: aliceblue;
+}
+
+table.grid {
+    margin: 20px auto;
+}
+
+td {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+td img {
+    width: 80px;
+    height: 80px;
+}
+
+.buttonsContainer {
+    padding-top: 10%;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #137355;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #00adb3;
+}
