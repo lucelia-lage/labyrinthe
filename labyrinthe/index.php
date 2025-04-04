@@ -126,14 +126,14 @@ $lost_message = $_SESSION['lost'] ? "<h2>Oupsiii, dommage, c'est la défaite, mo
         <table class="grid">
 
             <?php
-
             for ($i = 0; $i < $rows; $i++) {  // parcourir chaque ligne du labyrinthe
                 echo "<tr>";
                 for ($j = 0; $j < $cols; $j++) {  // parcourir chaque colonne de la ligne 
                     $image = "brouillard.png"; // brouillard par défaut 
-
-                    // la case est dans le "champ de vision" du chat (autour du chat dans un rayon de 1)
-                    if (($cat_x - $i) * ($cat_x - $i) <= 1 && ($cat_y - $j) * ($cat_y - $j) <= 1) {
+                    if ( // une case se trouve dans un carré de 3x3 autour du chat ?
+                        $i >= $cat_x - 1 && $i <= $cat_x + 1 &&
+                        $j >= $cat_y - 1 && $j <= $cat_y + 1
+                    ) {
                         //différence des coordonnées est inférieure ou égale à 1 => case est visible autour du chat
                         if ($grid[$i][$j] === 'M') { // case est un mur ? on définit l'image du mur
                             $image = "mur.png";
